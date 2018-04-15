@@ -37,7 +37,7 @@ function! CompleteNotmuchAddress(findstart, base)
         let address_tag = "tag:" . shellescape(g:notmuch_address_tag)
       endif
 
-      let ncommand = "notmuch address -- " . address_tag . " " . search_prefix . query
+      let ncommand = "$MY_MUTT_NOTMUCH address -- " . address_tag . " " . search_prefix . query
       for m in split(system(ncommand), '\n')
         if complete_check()
           break
