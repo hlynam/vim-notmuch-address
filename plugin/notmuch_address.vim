@@ -38,7 +38,7 @@ function! CompleteNotmuchAddress(findstart, base)
       endif
 
       let ncommand = "notmuch address -- " . address_tag . " " . search_prefix . query
-      for m in systemlist(ncommand)
+      for m in split(system(ncommand), '\n')
         if complete_check()
           break
         endif
